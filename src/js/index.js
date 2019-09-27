@@ -1,6 +1,7 @@
 //import react into the bundle
 import React from "react";
 import ReactDOM from "react-dom";
+import PropTypes from "prop-types";
 import "bootstrap";
 import "../styles/index.scss";
 import { Home } from "./component/home.js";
@@ -29,12 +30,16 @@ SecondsCounter.propTypes = {
 };
 
 let counter = 0;
+
 //render your react application
 setInterval(function() {
-	const four = Math.floor(counter / 1000);
-	const three = Math.floor(counter / 100);
-	const two = Math.floor(counter / 10);
-	const one = Math.floor(counter / 1);
+	let countstr = "000" + counter.toString();
+	let largostr = countstr.length;
+
+	const four = Number(countstr[largostr - 4]);
+	const three = Number(countstr[largostr - 3]);
+	const two = Number(countstr[largostr - 2]);
+	const one = Number(countstr[largostr - 1]);
 	counter++;
 	ReactDOM.render(
 		<SecondsCounter
