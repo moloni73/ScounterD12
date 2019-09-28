@@ -5,15 +5,17 @@ import PropTypes from "prop-types";
 import "bootstrap";
 import "../styles/index.scss";
 //import { Home } from "./component/home.js";
-import "./component/icons.js";
+//import "./component/icons.js";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faClock } from "@fortawesome/free-solid-svg-icons";
+
+const element = <FontAwesomeIcon icon={faClock} />;
 
 const SecondsCounter = props => {
 	// 1) replace the hard-coded image, description, link, etc. With their property variable.
 	return (
 		<div className="bigCounter">
-			<div className="calendar">
-				<i className="far fa-clock" />
-			</div>
+			<div className="calendar">{element}</div>
 			<div className="four">{props.digitFour}</div>
 			<div className="three">{props.digitThree}</div>
 			<div className="two">{props.digitTwo}</div>
