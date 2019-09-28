@@ -4,13 +4,16 @@ import ReactDOM from "react-dom";
 import PropTypes from "prop-types";
 import "bootstrap";
 import "../styles/index.scss";
-import { Home } from "./component/home.js";
+//import { Home } from "./component/home.js";
+import "./component/icons.js";
 
 const SecondsCounter = props => {
 	// 1) replace the hard-coded image, description, link, etc. With their property variable.
 	return (
 		<div className="bigCounter">
-			<i className="MyImag" src={imagClock} />
+			<div className="calendar">
+				<i className="far fa-clock" />
+			</div>
 			<div className="four">{props.digitFour}</div>
 			<div className="three">{props.digitThree}</div>
 			<div className="two">{props.digitTwo}</div>
@@ -18,8 +21,6 @@ const SecondsCounter = props => {
 		</div>
 	);
 };
-
-let imagClock = "https://fontawesome.com/icons/alarm-clock?style=regular";
 
 SecondsCounter.propTypes = {
 	digitOne: PropTypes.number,
